@@ -11,14 +11,14 @@ public class Player
 {
     public Vector2 position; // position of the player
     public Vector2 velocity; // velocity of the player
-    public Sprite sprite;   // sprite of the player
+    public Sprite sprite; // sprite of the player
 
-    img = new Texture("player.png"); // image of the player
+    Texture img = new Texture("personagem.png"); // image of the player
 
     public Player(Texture img)
     {
         sprite = new Sprite(img);  // create the sprite
-        Vector2 positon = new Vector2(Gdx.graphics.getWidth()/2,0); // set the position to the center of the screen
+        position = new Vector2(Gdx.graphics.getWidth()/2,0); // set the position to the center of the screen
         sprite.setScale(4, 4);
     }
 
