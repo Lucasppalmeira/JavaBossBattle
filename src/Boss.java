@@ -1,34 +1,34 @@
 public class Boss {
-    private String nome;
-    private Integer vida;
-    private Integer dano;
-    private Integer defesa;
+    private String nomeBoss;
+    private Integer vidaBoss;
+    private Integer danoBoss;
+    private Integer defesaBoss;
 
-    public Boss(String nome, Integer vida, Integer dano, Integer defesa){ // constructor 
-    this.nome = nome;
-    this.vida = vida;
-    this.dano = dano;
-    this.defesa = defesa;
+    public Boss(String nomeBoss, Integer vidaBoss, Integer danoBoss, Integer defesaBoss){ // constructor 
+    this.nomeBoss = nomeBoss;
+    this.vidaBoss = vidaBoss;
+    this.danoBoss = danoBoss;
+    this.defesaBoss = defesaBoss;
 }
 
-public String getNome()
+public String getNomeBoss()
 { //pegando nome do boss
-    return this.nome;
+    return this.nomeBoss;
 }
 
-public Integer getVida()
+public Integer getVidaBoss()
 {  //pegando vida do boss
-    return this.vida;
+    return this.vidaBoss;
 }
 
-public Integer getDano()
+public Integer getDanoBoss()
 {  //pegando dano do boss
-    return this.dano;
+    return this.danoBoss;
 }
 
-public Integer getDefesa()
+public Integer getDefesaBoss()
 {  //pegando defesa do boss
-    return this.defesa;
+    return this.defesaBoss;
 }
 
 }
