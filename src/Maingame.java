@@ -1,8 +1,8 @@
 import javax.swing.JFrame;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
 public class Maingame {
 
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class Maingame {
             Timer timer = new Timer(20, new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    backgroundPanel.moveBackground(2,0);
+                    backgroundPanel.moveBackground(6,0);
                     backgroundPanel.repaint();
                 }
             });
