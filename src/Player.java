@@ -13,7 +13,7 @@ public class Player {
         return this.vidaPlayer;
     }
 
-    public Integer danoPlayer(){
+    public Integer getDanoPlayer(){
         return this.danoPlayer;
     }
         

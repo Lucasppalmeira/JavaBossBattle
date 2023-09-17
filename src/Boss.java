@@ -2,13 +2,12 @@ public class Boss {
     private String nomeBoss;
     private Integer vidaBoss;
     private Integer danoBoss;
-    private Integer defesaBoss;
+    
 
-    public Boss(String nomeBoss, Integer vidaBoss, Integer danoBoss, Integer defesaBoss){ // constructor 
+    public Boss(String nomeBoss, Integer vidaBoss, Integer danoBoss){ // constructor 
     this.nomeBoss = nomeBoss;
     this.vidaBoss = vidaBoss;
     this.danoBoss = danoBoss;
-    this.defesaBoss = defesaBoss;
 }
 
 public String getNomeBoss()
@@ -26,10 +25,6 @@ public Integer getDanoBoss()
     return this.danoBoss;
 }
 
-public Integer getDefesaBoss()
-{  //pegando defesa do boss
-    return this.defesaBoss;
-}
 
 }
 
