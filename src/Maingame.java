@@ -26,13 +26,11 @@ public class Maingame {
             timer.start();
         });
 
-
+        // Criando o objeto Player
         Player player = new Player(100, 10);
-        System.out.println(player.getVidaPlayer() + " " + player.getDanoPlayer());
 
-        //criando boss
+        // Criando o objeto Boss
         Boss boss = new Boss("placeholder", 1000, 50);
-        System.out.println(boss.getNomeBoss() + " " + boss.getVidaBoss() + " " + boss.getDanoBoss() + "\n"); 
         
     }
     

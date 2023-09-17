@@ -1,4 +1,5 @@
 public class Player {
+    private String pato;
     private Integer vidaPlayer;
     private Integer danoPlayer;
 
@@ -6,7 +7,7 @@ public class Player {
     {
         this.vidaPlayer = vidaPlayer;
         this.danoPlayer = danoPlayer;
-    
+        this.pato = "Quack";
     }
 
     public Integer getVidaPlayer(){
@@ -15,6 +16,9 @@ public class Player {
 
     public Integer getDanoPlayer(){
         return this.danoPlayer;
+    }
+    public String getPato(){
+    return pato;
     }
         
     
