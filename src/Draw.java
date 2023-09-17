@@ -20,10 +20,10 @@ public class Draw extends JPanel {
     // Método para mover o fundo
     public void moveBackground( int dx, int dy){
         //movendo o fundo para esquerda
-        backgroundY += dx;
+        backgroundY -= dx;
 
         // Se o fundo sair da tela, reinicie
-        if(backgroundY >= getWidth()){
+        if(backgroundY > getWidth()){
             backgroundY = 0;
         }
         repaint();
