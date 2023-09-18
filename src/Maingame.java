@@ -6,7 +6,7 @@ public class Maingame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("bossbattle");
+            JFrame frame = new JFrame("BossBattle");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             Draw backgroundPanel = new Draw("src/sprites/background.jpg",
@@ -28,6 +28,7 @@ public class Maingame {
             // Agora crie os objetos Player e Boss aqui dentro do bloco Swing
             Player player = new Player(100, 10);
             Boss boss = new Boss("placeholder", 1000, 50);
+            System.out.println(player.getPato());
         });
     }
 }
