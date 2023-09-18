@@ -1,4 +1,3 @@
-
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import java.awt.Image;
@@ -7,38 +6,64 @@ import java.awt.event.KeyEvent;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import javax.swing.Timer;
 
-class Draw extends JPanel {
+class Draw extends JPanel implements ActionListener {
 
     private Image background;
     private Image playerImage;
-    private Player player; //instanciando a classe player
+
+    private int playerX;
+    private int playerY;
+
     private int backgroundY;
 
-    public Draw(String backgroundImagePath, String playerImagePath, int playerWidht, int playerHeight) {
+    private Timer timer;
+
+    public Draw(String backgroundImagePath, String playerImagePath, int playerWidth,
+                int playerHeight, int initialPlayerX, int initialPlayerY) {
+        // Inicializando o background
         ImageIcon backgroundImageIcon = new ImageIcon(backgroundImagePath);
         background = backgroundImageIcon.getImage();
 
+        // Inicializando o player
         ImageIcon playerImageIcon = new ImageIcon(playerImagePath);
-        playerImage = playerImageIcon.getImage().getScaledInstance(playerWidht, playerHeight, Image.SCALE_SMOOTH);
-
-       
+        playerImage = playerImageIcon.getImage().getScaledInstance(playerWidth, playerHeight, Image.SCALE_SMOOTH);
         backgroundY = 0;
 
-        //configura o foco para receber eventos de teclado
+        // Configurando o foco para receber eventos de teclado
         setFocusable(true);
-        
-    }
+        requestFocusInWindow();
 
+        // Configurando os elementos do teclado
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                int keyCode = e.getKeyCode();
+
+                // Move o jogador com base na tecla pressionada
+                if (keyCode == KeyEvent.VK_LEFT) {
+                    playerX -= 10; // Move para a esquerda
+                } else if (keyCode == KeyEvent.VK_RIGHT) {
+                    playerX += 10; // Move para a direita
+                }
+            }
+        });
+
+        // Configura a posição inicial do jogador
+        playerX = initialPlayerX;
+        playerY = initialPlayerY;
+
+        // Configura o timer para atualização contínua da tela
+        timer = new Timer(10, this);
+        timer.start();
+    }
 
     public void moveBackground(int dx, int dy) {
         backgroundY -= dx;
         if (backgroundY > getHeight()) {
             backgroundY = 0;
         }
-        repaint();
     }
 
     @Override
@@ -50,13 +75,18 @@ class Draw extends JPanel {
         int imageHeight = background.getHeight(this);
 
         int y = backgroundY;
-        while (y < panelHeight) {
+        while (y < panelHeight) { // Loop para o efeito infinito no background
             g.drawImage(background, 0, y, panelWidth, imageHeight, this);
             y += imageHeight;
         }
 
-        int playerX = panelWidth/2 - playerImage.getWidth(this)/2;
-        int playerY = panelHeight - playerImage.getHeight(this);
+        // Desenha o jogador na tela
         g.drawImage(playerImage, playerX, playerY, this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // Atualiza a tela a cada intervalo de tempo do timer
+        repaint();
     }
 }

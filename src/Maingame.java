@@ -9,16 +9,17 @@ public class Maingame {
             JFrame frame = new JFrame("bossbattle");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-            Draw backgroundPanel = new Draw("src/sprites/background.jpg","src/sprites/player.png",75,75);
+            Draw backgroundPanel = new Draw("src/sprites/background.jpg",
+            "src/sprites/player.png",75,75, 150, 700);
             frame.add(backgroundPanel);
 
-            frame.setSize(800, 600);
+            frame.setSize(400, 800);
             frame.setVisible(true);
 
             Timer timer = new Timer(20, new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    backgroundPanel.moveBackground(6,0);
+                    backgroundPanel.moveBackground(20,0);
                     backgroundPanel.repaint();
                 }
             });
