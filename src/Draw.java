@@ -106,7 +106,11 @@ class Draw extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         // Atualiza a posição do jogador com base na velocidade atual
-        playerX += playerVelocityX;
+        if(playerVelocityX < 0 && playerX > -30) {
+            playerX += playerVelocityX;
+        } else if (playerVelocityX > 0 && playerX < 1500) {
+            playerX += playerVelocityX;
+        }
         playerY += playerVelocityY;
 
         // Atualiza a tela a cada intervalo de tempo do timer
