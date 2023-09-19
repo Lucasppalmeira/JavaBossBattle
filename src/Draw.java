@@ -43,7 +43,6 @@ class Draw extends JPanel implements ActionListener {
             @Override
             public void keyPressed(KeyEvent e) {
                 int keyCode = e.getKeyCode();
-<<<<<<< HEAD
 
                 // Atualiza a velocidade com base na tecla pressionada
                 if (keyCode == KeyEvent.VK_LEFT) {
@@ -66,23 +65,6 @@ class Draw extends JPanel implements ActionListener {
                     playerVelocityX = 0;
                 } else if (keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_DOWN) {
                     playerVelocityY = 0;
-=======
-                // Move o jogador com base na tecla pressionada
-                if (keyCode == KeyEvent.VK_LEFT) {
-                    if(playerX > -30){
-                        playerX -= 10; // Move para a esquerda
-                    }
-                    //playerX -= 10; // Move para a esquerda
-                } else if (keyCode == KeyEvent.VK_RIGHT) {
-                    if(playerX < 1500){
-                        playerX += 10;
-                    }
-                    //playerX += 10; // Move para a direita
-                } else if(keyCode == KeyEvent.VK_UP){
-                    playerY -= 10;
-                } else if(keyCode == KeyEvent.VK_DOWN){
-                    playerY += 10;
->>>>>>> 23f68836a56f7bba5279194cc00d27fa684307d3
                 }
             }
         });
