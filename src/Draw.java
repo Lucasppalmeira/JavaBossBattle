@@ -40,12 +40,17 @@ class Draw extends JPanel implements ActionListener {
             @Override
             public void keyPressed(KeyEvent e) {
                 int keyCode = e.getKeyCode();
-
                 // Move o jogador com base na tecla pressionada
                 if (keyCode == KeyEvent.VK_LEFT) {
-                    playerX -= 10; // Move para a esquerda
+                    if(playerX > -30){
+                        playerX -= 10; // Move para a esquerda
+                    }
+                    //playerX -= 10; // Move para a esquerda
                 } else if (keyCode == KeyEvent.VK_RIGHT) {
-                    playerX += 10; // Move para a direita
+                    if(playerX < 1500){
+                        playerX += 10;
+                    }
+                    //playerX += 10; // Move para a direita
                 } else if(keyCode == KeyEvent.VK_UP){
                     playerY -= 10;
                 } else if(keyCode == KeyEvent.VK_DOWN){
