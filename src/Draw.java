@@ -46,6 +46,10 @@ class Draw extends JPanel implements ActionListener {
                     playerX -= 10; // Move para a esquerda
                 } else if (keyCode == KeyEvent.VK_RIGHT) {
                     playerX += 10; // Move para a direita
+                } else if(keyCode == KeyEvent.VK_UP){
+                    playerY -= 10;
+                } else if(keyCode == KeyEvent.VK_DOWN){
+                    playerY += 10;
                 }
             }
         });
