@@ -52,9 +52,15 @@ class Draw extends JPanel implements ActionListener {
                     }
                     //playerX += 10; // Move para a direita
                 } else if(keyCode == KeyEvent.VK_UP){
-                    playerY -= 10;
+                    if(playerY > -30){
+                        playerY -= 10;
+                    }
+                    //playerY -= 10; // Move para cima
                 } else if(keyCode == KeyEvent.VK_DOWN){
-                    playerY += 10;
+                    if(playerY < 750) {
+                        playerY += 10;
+                    }
+                    //playerY += 10; // Move para baixo
                 }
             }
         });
