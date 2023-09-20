@@ -21,6 +21,4 @@ public class Player {
     public String getPato(){
     return pato;
     }
-        
-    
 }
