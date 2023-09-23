@@ -10,7 +10,7 @@ public class Maingame {
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             Draw backgroundPanel = new Draw("src/sprites/background.jpg",
-            "src/sprites/player.png","src/sprites/boss.png", 75,75, 150, 700, 150, 700, 150, 150);
+            "src/sprites/player.png","src/sprites/boss.png", 75,75, 150, 700, 150, 75, 150, 150);
             frame.add(backgroundPanel);
 
             frame.setSize(400, 800);

@@ -29,7 +29,7 @@ class Draw extends JPanel implements ActionListener {
     private Timer timer;
 
     public Draw(String backgroundImagePath, String playerImagePath, String bossImagePath,int playerWidth,
-                int playerHeight, int initialPlayerX, int initialPlayerY , int bossX, int bossY, int bossWidth, int bossHeight) {
+                int playerHeight, int initialPlayerX, int initialPlayerY , int initialBossX, int initialBossY, int bossWidth, int bossHeight) {
                     
         // Inicializando o background
         ImageIcon backgroundImageIcon = new ImageIcon(backgroundImagePath);
@@ -83,6 +83,9 @@ class Draw extends JPanel implements ActionListener {
         // Configura a posição inicial do jogador
         playerX = initialPlayerX;
         playerY = initialPlayerY;
+
+        bossX = initialBossX;
+        bossY = initialBossY;
 
         // Configura o timer para atualização contínua da tela
         timer = new Timer(10, this);
