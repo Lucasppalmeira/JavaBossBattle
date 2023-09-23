@@ -24,6 +24,7 @@ public class Projeteis {
 
     public boolean isOutOfScreen(){
         return Y < 0;
+
     }
 
 }
