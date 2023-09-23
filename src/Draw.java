@@ -10,21 +10,27 @@ import javax.swing.Timer;
 
 class Draw extends JPanel implements ActionListener {
 
+    //background
+    private int backgroundY;
     private Image background;
-    private Image playerImage;
 
+    // player
     private int playerX;
     private int playerY;
-
-    private int backgroundY;
-
     private int playerVelocityX; // Velocidade horizontal do jogador
     private int playerVelocityY; // Velocidade vertical do jogador
+    private Image playerImage;
+
+    //boss
+     private Image bossImage;
+     private int bossX;
+     private int bossY;
 
     private Timer timer;
 
-    public Draw(String backgroundImagePath, String playerImagePath, int playerWidth,
-                int playerHeight, int initialPlayerX, int initialPlayerY) {
+    public Draw(String backgroundImagePath, String playerImagePath, String bossImagePath,int playerWidth,
+                int playerHeight, int initialPlayerX, int initialPlayerY , int bossX, int bossY, int bossWidth, int bossHeight) {
+                    
         // Inicializando o background
         ImageIcon backgroundImageIcon = new ImageIcon(backgroundImagePath);
         background = backgroundImageIcon.getImage();
@@ -33,6 +39,11 @@ class Draw extends JPanel implements ActionListener {
         ImageIcon playerImageIcon = new ImageIcon(playerImagePath);
         playerImage = playerImageIcon.getImage().getScaledInstance(playerWidth, playerHeight, Image.SCALE_SMOOTH);
         backgroundY = 0;
+
+        //iniciando o boss
+        ImageIcon bossImageIcon = new ImageIcon(bossImagePath);
+        bossImage = bossImageIcon.getImage();
+        bossImage = bossImageIcon.getImage().getScaledInstance(bossWidth, bossHeight, Image.SCALE_SMOOTH);
 
         // Configurando o foco para receber eventos de teclado
         setFocusable(true);
@@ -101,6 +112,10 @@ class Draw extends JPanel implements ActionListener {
 
         // Desenha o jogador na tela
         g.drawImage(playerImage, playerX, playerY, this);
+
+        //Desenha boss na tela
+        g.drawImage(bossImage, bossX, bossY, this);
+
     }
 
     @Override
