@@ -9,7 +9,7 @@ public class Maingame {
             JFrame frame = new JFrame("BossBattle");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-            Draw backgroundPanel = new Draw("src/sprites/background.jpg",
+            Draw backgroundPanel = new Draw("src/sprites/background.jpeg",
             "src/sprites/player.png","src/sprites/boss.png", 75,75, 150, 700, 150, 75, 150, 150);
             frame.add(backgroundPanel);
 
