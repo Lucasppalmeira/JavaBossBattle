@@ -15,8 +15,8 @@ class Draw extends JPanel implements ActionListener {
     private Image background;
 
     // player
-    private int playerX;
-    private int playerY;
+    public int playerX;
+    public int playerY;
     private int playerVelocityX; // Velocidade horizontal do jogador
     private int playerVelocityY; // Velocidade vertical do jogador
     private Image playerImage;

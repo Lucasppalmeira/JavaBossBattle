@@ -1,13 +1,29 @@
+import java.awt.Graphics;
+import java.awt.Image;
+
 public class Projeteis {
-    private String idIdentificacao;
-    private double amplificacaoDano;
+    private int X;
+    private int Y;
+    private int velocityY;
+    private Image imageProjetil;
 
-    public void Projeteis(String id, int dano){
-        this.idIdentificacao = id;
-        this.amplificacaoDano = dano;
+    public Projeteis( int X, int Y){
+        this.X = X;
+        this.Y = Y;
+        this.velocityY = -5;
     }
 
-    public double getAmplificacaoDano(){
-        return this.amplificacaoDano;
+    public void move(){
+        Y += velocityY;
     }
+
+    public void draw(Graphics g){
+    
+        g.drawImage(imageProjetil, X, Y, null);
+    }
+
+    public boolean isOutOfScreen(){
+        return Y < 0;
+    }
+
 }
